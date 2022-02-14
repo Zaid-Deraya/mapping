@@ -11,4 +11,7 @@ import com.orm.mapping.entities.Customer;
 public interface CustomerRepository extends JpaRepository<Customer, Integer> {
 	@Query("SELECT new com.orm.mapping.dto.OrderResponse(c.name, p.pName, p.price) FROM Customer c JOIN c.products p")	
 	public List<OrderResponse> getJoinInformation();
+
+//	public Customer updateCustomerDetails(Customer customer);
+	
 }
